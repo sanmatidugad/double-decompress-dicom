@@ -1,0 +1,18 @@
+Python version >= 3.10
+
+# Python GDCM bindings (install in your Python environment)
+python-gdcm
+
+# System dependencies (must be installed separately depending on OS):
+
+# macOS (Homebrew)
+brew install gdcm
+
+# macOS (MacPorts)
+sudo port install gdcm
+
+# Ubuntu/Debian Linux
+sudo apt install libgdcm2-dev
+
+# Using conda (from conda-forge channel)
+conda install -c conda-forge gdcm
