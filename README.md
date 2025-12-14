@@ -26,8 +26,23 @@ Input DICOM Folders
 └── Scan Name - 2/
     ├── image002.dcm
 ```
-#### Step 3: Use the following `dcm2niix` command
-``` text
-mkdir Nifti
-dcm2niix -o Nifti -z y -f <subjectID>_%d_%s_raw DICOM_READY_FOR_NIFTI
-```
+
+### How to Run
+1. Navigate to the directory containing all DICOM folders.
+   ``` bash
+   cd /path/to/folder
+   ```
+3. Run the pipeline:
+   ```bash
+   python3 double_decompress.py
+   ```
+4. This will generate two folders:
+   a. PY-DECOMP
+   b. DICOM_READY_FOR_NIFTI
+5. Convert the second folder to NIfTI using dcm2niix:
+   ```bash
+   mkdir Nifti
+   dcm2niix -o Nifti -z y -f <subjectID>_%d_%s_raw DICOM_READY_FOR_NIFTI
+   ```
+   
+
