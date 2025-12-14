@@ -37,8 +37,8 @@ Input DICOM Folders
    python3 double_decompress.py
    ```
 4. This will generate two folders:
-   a. PY-DECOMP
-   b. DICOM_READY_FOR_NIFTI
+   * PY-DECOMP
+   * DICOM_READY_FOR_NIFTI
 5. Convert the second folder to NIfTI using dcm2niix:
    ```bash
    mkdir Nifti
