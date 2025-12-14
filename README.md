@@ -26,7 +26,7 @@ Input DICOM Folders
     ├── image001.dcm
     ├── image002.dcm
 ```
-#### Step 3 – Use the following `dcm2niix` command
+#### Step 3: Use the following `dcm2niix` command
 ``` text
 mkdir Nifti
 dcm2niix -o Nifti -z y -f <subjectID>_%d_%s_raw DICOM_READY_FOR_NIFTI
