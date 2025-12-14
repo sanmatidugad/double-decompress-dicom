@@ -15,15 +15,15 @@ Many standard DICOM → NIfTI tools fail when encountering compressed, encapsula
 - Forces raw pixel storage
 - Removes encapsulation
 - Produces fully uncompressed DICOMs
-
+  
 The output files are now safe for NIfTI conversion.
-
 
 #### Folder Structure
 ```text
 Input DICOM Folders
-└── Scan Name - 12/
+└── Scan Name - 1/
     ├── image001.dcm
+└── Scan Name - 2/
     ├── image002.dcm
 ```
 #### Step 3: Use the following `dcm2niix` command
