@@ -4,7 +4,7 @@ This repository provides a robust batch-processing pipeline for preparing MRI DI
 
 Many standard DICOM → NIfTI tools fail when encountering compressed, encapsulated, or vendor-specific DICOM files. This project solves that problem by **decompressing the DICOMs twice using GDCM** before conversion.
 
-### Pipeline Overview
+### Pipeline Overview –
 
 #### Step 1: Python GDCM Decompression
 - Reads DICOM files using Python GDCM bindings
@@ -18,7 +18,7 @@ Many standard DICOM → NIfTI tools fail when encountering compressed, encapsula
   
 The output files are now safe for NIfTI conversion.
 
-#### Folder Structure
+#### Folder Structure (Each `.dcm` file should have a different folder)
 ```text
 Input DICOM Folders
 └── Scan Name - 1/
@@ -27,7 +27,7 @@ Input DICOM Folders
     ├── image002.dcm
 ```
 
-### How to Run
+### How to Run –
 1. Navigate to the directory containing all DICOM folders.
    ``` bash
    cd /path/to/folder
@@ -39,10 +39,16 @@ Input DICOM Folders
 4. This will generate two folders:
    * <sub>**PY-DECOMP**</sub>
    * <sub>**DICOM_READY_FOR_NIFTI**</sub>
+   
 5. Convert the second folder to NIfTI using dcm2niix:
    ```bash
    mkdir Nifti
    dcm2niix -o Nifti -z y -f <subjectID>_%d_%s_raw DICOM_READY_FOR_NIFTI
    ```
-   
+
+### Note –
+1. This script is **not intended for DICOM datasets where multiple series are stored in the same folder**. For such data, `dcm2niix` can usually be used directly.
+2. This script is designed for `.dcm` acquisitions where **each MRI acquisition is stored as a single DICOM file**.
+3. The script assumes that **each acquisition has an associated series number present in the DICOM metadata** (and reflected in the folder name).
+
 
