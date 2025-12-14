@@ -1,6 +1,6 @@
 ### Double Decompress DICOM Files (MRI → NIfTI Ready)
 
-This repository provides a robust pipeline for preparing MRI DICOM files for reliable conversion to NIfTI (`.nii.gz`) format.
+This repository provides a robust batch processing pipeline for preparing MRI DICOM files for reliable conversion to NIfTI (`.nii.gz`) format.
 
 Many standard DICOM → NIfTI tools fail when encountering compressed, encapsulated, or vendor-specific DICOM files. This project solves that problem by **decompressing the DICOMs twice using GDCM** before conversion.
 
